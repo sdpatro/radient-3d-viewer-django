@@ -1,0 +1,110 @@
+.range-label{
+    display:inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    color: #eeeeee;
+    font-size: 0.9em;
+    width:75px;
+}
+
+.range-container{
+    width:150px;
+    display:inline-block;
+    vertical-align: middle;
+    margin: 5px;
+}
+
+.range-container input{
+    width:150px;
+}
+
+#controls{
+    vertical-align: middle;
+}
+
+#files-btn-group{
+    margin: 10px;
+}
+
+#viewer-container{
+    padding: 0px;
+    position: relative;
+}
+
+#viewer-overlay{
+    padding:20px;
+    background-color: #111111;
+    opacity: 0.2;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    z-index: 2;
+    top: 0:
+    left: 0;
+    overflow: hidden;
+
+    -webkit-transition: width 0.5s, height 0.5s, opacity 0.5s; /* Safari */
+    transition: width 0.5s, height 0.5s, opacity 0.5s;
+
+}
+
+#page-header{
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+#viewer-overlay:hover{
+    opacity: 0.7;
+    height: 500px;
+    width: 550px;
+}
+
+#move-controls{
+    margin: 10px;
+}
+
+#move-controls-container{
+    vertical-align:middle;
+    display: block;
+}
+
+.control-header{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #eeeeee;
+    display:inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+#move-controls button{
+    display:inline-block;
+    margin: 2px;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    width: 50px;
+    height: 30px;
+    padding: 0px;
+    font-size: 15px;
+}
+
+#hex-color{
+    border: none;
+    text-align:center;
+    margin-top: 10px;
+}
+
+#load-status{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    visibility: hidden;
+}
+
+#main{
+    text-align: center;
+    padding-bottom: 50px;
+}

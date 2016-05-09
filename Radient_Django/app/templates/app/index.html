@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Radient 3d Viewer</title>
+    <link href="/static/custom-slider.css" rel="stylesheet"/>
+    <script src="/static/jquery-2.2.0.min.js"></script>
+    <script src="/static/three.min.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
+    <script src="/static/scripts.js"></script>
+    <script src="/static/jscolor.min.js"></script>
+    <link href="/static/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/static/styles.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="main-container" class="container">
+        <h3 id="page-header">RADIENT 3D VIEWER</h3>
+        <div id="main" class="col-lg-12">
+            <div id="files-btn-group" class="btn-group" role="group" aria-label="...">
+              <button type="button" class="model-btn btn btn-default active" onclick="changeModel(this)">spacesuit</button>
+              <button type="button" class="model-btn btn btn-default" onclick="changeModel(this)">lamborghini</button>
+              <button type="button" class="model-btn btn btn-default" onclick="changeModel(this)">leeperrysmith</button>
+              <button type="button" class="model-btn btn btn-default" onclick="changeModel(this)">factory</button>
+              <button type="button" class="model-btn btn btn-default" onclick="changeModel(this)">elephant</button>
+            </div>
+            <div id="load-status">Loading your model, please wait...</div>
+            <div id="viewer-container" class="row">
+                <div id="viewer-overlay" class="viewer-overlay active">
+                    <div id="controls">
+                        <div class="control-header">CAMERA</div>
+                        <div class="range-control-container">
+                            <div class="range-label">NEAR</div>
+                            <div class="range-container">
+                                <input id="camera-distance" class="range-slider" type="range"/>
+                            </div>
+                            <div class="range-label">FAR</div>
+                        </div>
+                        <div class="range-control-container">
+                            <div class="range-label">
+                                LOW
+                            </div>
+                            <div class="range-container">
+                                <input id="camera-height" type="range"/>
+                            </div>
+                            <div class="range-label">
+                                HIGH
+                            </div>
+                        </div>
+                        <div class="range-control-container">
+                            <div class="range-label">
+                                0&#176
+                            </div>
+                            <div class="range-container">
+                                <input id="camera-degree" type="range" min="1" max="360" value="45"/>
+                            </div>
+                            <div class="range-label">
+                                360&#176
+                            </div>
+                        </div>
+                        <div class="control-header">LIGHT</div>
+                        <div class="range-control-container">
+                            <div class="range-label">
+                                -X
+                            </div>
+                            <div class="range-container">
+                                <input id="pointLight-x" type="range" min="-600" max="600" value="200"/>
+                            </div>
+                            <div class="range-label">
+                                +X
+                            </div>
+                        </div>
+
+                        <div class="range-control-container">
+                            <div class="range-label">
+                                -Y
+                            </div>
+                            <div class="range-container">
+                                <input id="pointLight-y" type="range" min="-600" max="600" value="200"/>
+                            </div>
+                            <div class="range-label">
+                                +Y
+                            </div>
+                        </div>
+
+                        <div class="range-control-container">
+                            <div class="range-label">
+                                -Z
+                            </div>
+                            <div class="range-container">
+                                <input id="pointLight-z" type="range" min="-600" max="600" value="200"/>
+                            </div>
+                            <div class="range-label">
+                                +Z
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="move-controls">
+                        <div class="control-header">MODEL</div>
+                        <div class="move-controls-container">
+                            <button id="move-mesh-up" onmousedown="moveMeshStart('UP')">&#9650</button>
+                            <button id="move-mesh-down" onmousedown="moveMeshStart('DOWN')">&#9660</button>
+                            <button id="move-mesh-left" onmousedown="moveMeshStart('LEFT')" >&#9664</button>
+                            <button id="move-mesh-right" onmousedown="moveMeshStart('RIGHT')">&#9654</button>
+                            <button id="move-mesh-front" onmousedown="moveMeshStart('FRONT')">&#8659</button>
+                            <button id="move-mesh-back" onmousedown="moveMeshStart('BACK')">&#8657</button>
+                        </div>
+                    </div>
+                    <input id="hex-color" class="jscolor" value="A1B2AB" onchange="setMeshColor()"/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
